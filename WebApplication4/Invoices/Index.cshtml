@@ -1,0 +1,37 @@
+﻿@page
+@model WebApplication4.Invoices.IndexModel
+@{
+}
+<h2 class=" text-center mb-3 "> Invoices</h2>
+<a class=" btn btn-primary" asp-page ="/index/create"> New Invoice</a>
+
+<table class="table">
+	<thead>
+		<tr>
+
+			<th>ID</th>
+			<th>Invoice</th>
+			<th>Status</th>
+			<th>Client</th>
+			<th>Total Price</th>
+			<th>IssueDate</th>
+		</tr>
+	</thead>
+
+	<tbody class="table-group-devider">
+
+		@foreach (var invoice in Model.invoicelist)
+		{
+			<tr>
+				<td>@invoice.Id</td>
+				<td>@invoice.ClientName</td>
+				<td>@invoice.Address</td>
+				<td>@invoice.ClientName</td>
+				<td>@invoice.IssueDate</td>
+				<!--here we add delete and edit page-->
+			</tr>
+			
+		}
+	</tbody>
+</table>
+
